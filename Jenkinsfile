@@ -1,16 +1,10 @@
 pipeline {
-  agent any
-  
-  stages {
-    stage("Build") {
-      steps {
-        sh "npm install"
-      }
+    agent { docker { image 'nodejs-rest-http:latest' } }
+    stages {
+        stage('build') {
+            steps {
+                sh 'node --version'
+            }
+        }
     }
-    stage("Deploy") {
-      steps {
-        sh "npm run openshift"
-      }
-    }
-  }
 }
