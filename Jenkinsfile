@@ -1,5 +1,6 @@
-
-node("launchpad-nodejs") {
+pipeline {
+  agent any
+  
   checkout scm
   stage("Build") {
     sh "npm install"
