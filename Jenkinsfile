@@ -1,5 +1,5 @@
 pipeline {
-    agent { kubernetes { image 'nodejs-rest-http:latest' } }
+    agent { kubernetes { label 'nodejs-rest-http:latest' } }
     stages {
         stage('build') {
             steps {
